@@ -1,0 +1,177 @@
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+
+  animation: fadeIn 0.25s ease;
+  z-index: 200;
+}
+
+
+
+.modal {
+  width: 640px;
+  max-height: 90vh;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  animation: modalIn 0.3s ease;
+}
+
+
+
+.modal__image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+
+  opacity: 0;
+  filter: blur(10px);
+
+  transition: all 0.4s ease;
+}
+
+.modal__image.is-loaded {
+  opacity: 1;
+  filter: blur(0);
+}
+
+
+.modal__skeleton {
+  height: 240px;
+
+  background: linear-gradient(
+    90deg,
+    var(--border) 25%,
+    var(--surface) 50%,
+    var(--border) 75%
+  );
+
+  background-size: 200% 100%;
+  animation: loading 1.2s infinite;
+}
+
+
+
+.modal__content {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+
+.modal__content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal__content::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+
+.modal__title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.modal__description {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.modal__location {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+
+.modal__button {
+  margin-top: 16px;
+
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+
+  background: var(--surface);
+  color: var(--text);
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal__button:hover {
+  border-color: var(--accent);
+}
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalIn {
+  from {
+    transform: translateY(30px) scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+
+.modal.is-closing {
+  animation: modalOut 0.25s ease forwards;
+}
+
+.modal-overlay.is-closing {
+  animation: fadeOut 0.25s ease forwards;
+}
+
+@keyframes modalOut {
+  to {
+    transform: translateY(20px) scale(0.95);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}
+
+
+
+@media (max-width: 680px) {
+  .modal {
+    width: 95%;
+  }
+
+  .modal__image {
+    height: 200px;
+  }
+}
