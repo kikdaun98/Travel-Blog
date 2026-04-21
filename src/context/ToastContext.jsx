@@ -4,18 +4,29 @@ import "../styles/Toast.css";
 const ToastContext = createContext();
 
 export const ToastProvider = ({ children }) => {
-  const [toast, setToast] = useState(null);
+  const [toasts, setToasts] = useState([]);
 
-  const showToast = (text) => {
-    setToast(text);
-    setTimeout(() => setToast(null), 2500);
+  const showToast = (message, type = "default") => {
+    const id = Date.now();
+
+    setToasts((prev) => [...prev, { id, message, type }]);
+
+    setTimeout(() => {
+      setToasts((prev) => prev.filter((t) => t.id !== id));
+    }, 3000);
   };
 
   return (
     <ToastContext.Provider value={{ showToast }}>
       {children}
 
-      {toast && <div className="toast">{toast}</div>}
+      <div className="toast-container">
+        {toasts.map((t) => (
+          <div key={t.id} className={`toast ${t.type}`}>
+            {t.message}
+          </div>
+        ))}
+      </div>
     </ToastContext.Provider>
   );
 };

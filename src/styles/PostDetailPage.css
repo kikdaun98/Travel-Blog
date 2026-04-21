@@ -1,9 +1,7 @@
-
 .post-detail {
   max-width: 800px;
   margin: 0 auto;
 }
-
 
 .post-detail__image {
   width: 100%;
@@ -14,14 +12,12 @@
   margin-bottom: 20px;
 }
 
-
 .post-detail__image.placeholder {
   height: 220px;
   background: var(--border);
   border-radius: var(--radius);
   margin-bottom: 20px;
 }
-
 
 .post-author {
   display: flex;
@@ -54,7 +50,6 @@
   color: var(--text-secondary);
 }
 
-
 .post-detail h1 {
   margin-bottom: 10px;
 }
@@ -67,4 +62,30 @@
 .post-detail__description {
   line-height: 1.6;
   margin-bottom: 30px;
+}
+
+
+
+.post-detail__actions {
+  margin: 10px 0 20px;
+}
+
+.post-detail__like {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.post-detail__like:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.post-detail__like.liked {
+  color: var(--accent);
+  border-color: var(--accent);
 }
