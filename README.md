@@ -1,16 +1,95 @@
-# React + Vite
+# 🌍 Travel Blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Современное веб-приложение для публикации и просмотра путешествий.
+Пользователи могут делиться своими историями, ставить лайки и оставлять отзывы.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Функционал
 
-## React Compiler
+* 📌 Просмотр списка постов
+* 🔍 Поиск и фильтрация по названию и городу
+* 📝 Создание собственных постов
+* ❤️ Система лайков (сохранение в LocalStorage)
+* 💬 Комментарии к постам
+* 👤 Авторизация (локальная)
+* 🔔 Уведомления (Toast)
+* 🗺️ Отображение карты (Leaflet)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Технологии
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React
+* Vite
+* JavaScript (ES6+)
+* CSS (Flexbox, Grid)
+* React Router
+* Axios
+* LocalStorage
+
+---
+
+## 📸 Интерфейс
+
+* Современный UI с карточками
+* Адаптивный дизайн
+* Анимации и hover-эффекты
+
+---
+
+## 📂 Структура проекта
+
+```
+src/
+ ├── components/     # UI компоненты
+ ├── pages/          # страницы приложения
+ ├── context/        # глобальное состояние (Auth, Toast)
+ ├── api/            # работа с API
+ ├── utils/          # вспомогательные функции
+ ├── styles/         # стили
+```
+
+---
+
+## ⚙️ Установка и запуск
+
+```bash
+npm install
+npm run dev
+```
+
+Открыть в браузере:
+👉 http://localhost:5173
+
+---
+
+## 💾 Данные
+
+* Посты и лайки сохраняются в LocalStorage
+* API используется: https://jsonplaceholder.typicode.com
+
+---
+
+## ✨ Особенности
+
+* Часть данных локальная (созданные посты)
+* Часть — с внешнего API
+* Приложение работает без backend
+
+---
+
+ 📌 Планы по улучшению
+
+* 🔐 Реальная авторизация
+* 🌐 Backend (Node.js / Firebase)
+* 📱 Мобильная адаптация
+* ⭐ Избранное
+* 🖼️ Загрузка изображений
+
+---
+
+# 👨‍💻 Автор
+
+Проект выполнен в рамках учебной практики.
+ Кикош Владимир
